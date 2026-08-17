@@ -7,16 +7,17 @@
   <meta name="description" content="Research by Sarah Thiele — satellite trails, space debris, gravitational waves." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="saturn-icon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<script src="nav.js"></script>
+<script src="nav.js" defer></script>
 
 <main>
   <h1>Research</h1>
-  <p style="color: var(--muted); font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem;">
-    My work spans satellite trail detection, space debris modeling, and gravitational wave astrophysics.
+  <p style="color: var(--muted); font-family: 'Inter', sans-serif; font-size: 0.9rem;">
+    My research sits at the intersection of observational astronomy and space sustainability, spanning satellite trails, near-Earth objects, and space policy.
   </p>
 
   <!-- ── Project 1 ──────────────────────────────────────────── -->
@@ -24,20 +25,66 @@
     <p class="meta">Current · PhD Research</p>
     <h2>Satellite Trail Detection &amp; Characterization in HATPI</h2>
     <p>
-      Wide-field telescopes like HATPI are increasingly affected by satellite trails crossing their images. I develop and maintain a neural network–based pipeline for detecting, measuring, and identifying these trails in HATPI data from Las Campanas Observatory. The pipeline includes PCA-based line fitting, parabolic trail modeling, photometry, and a random forest classifier for trail characterization.
+      Wide-field telescopes like HATPI are increasingly affected by satellite trails crossing their images. I developed and maintain a pipeline for detecting, measuring, and identifying these trails in HATPI data from Las Campanas Observatory. The pipeline combines a neural network with a post-processing scheme and photometry measurements to empirically study trends in the numbers and brightness of satellite trails over time.
     </p>
     <p>
-      This work feeds directly into the broader question of how the proliferation of satellite constellations (SpaceX Starlink, Amazon Kuiper, and others) is changing the observational landscape for ground-based astronomy.
+      This work feeds directly into the broader question of how the proliferation of satellite constellations is changing the observational landscape for ground-based astronomy, and allows us to mitigate their effects on our science.
     </p>
+    <figure class="research-figure">
+      <img src="trail-example.png" alt="Four-panel figure showing a reduced HATPI image, the subtracted image, the sattrails mask, and post-processed output identifying 9 satellite trails." loading="lazy" />
+      <figcaption>Pipeline stages on a single HATPI frame: reduced image, subtracted image, the <code>sattrails</code> mask, and post-processed output identifying 9 trails (Thiele et al., in prep).</figcaption>
+    </figure>
+    <!--
     <div class="tags">
       <span class="tag">Machine Learning</span>
       <span class="tag">Satellite Trails</span>
       <span class="tag">Wide-field Imaging</span>
       <span class="tag">HATPI</span>
     </div>
+    -->
   </div>
 
   <!-- ── Project 2 ──────────────────────────────────────────── -->
+  <div class="research-item">
+    <p class="meta">Current · PhD Research</p>
+    <h2>Near-Earth Objects and Planetary Defense</h2>
+    <p>
+      The next phase of my thesis extends the satellite-trail work outward, from low Earth orbit to the near-Earth object population. Wide-field surveys see streaks from both populations — an artificial satellite and a fast-moving asteroid passing close to Earth can leave remarkably similar signatures on a detector. My machine learning pipeline, originally built to find and characterize satellite trails in HATPI imagery, is well positioned to make that distinction, separating manmade objects from genuine solar system movers rather than treating every streak as contamination to be masked out.
+    </p>
+    <p>
+      With HATPI's continuous coverage of the full visible sky from Las Campanas Observatory, I plan to use this capability to monitor for nearby, fast-moving small asteroids: the population that is closest to us, moves too quickly for many conventional surveys, and is most relevant to planetary defense. Beyond detection, the goal is characterization — deriving physical and orbital properties for objects that currently have few or no such measurements, and turning a survey designed for variable stars and transits into a tool for small-body science.
+    </p>
+    <!--
+    <div class="tags">
+      <span class="tag">Machine Learning</span>
+      <span class="tag">Near-Earth Objects</span>
+      <span class="tag">Planetary Defense</span>
+      <span class="tag">HATPI</span>
+    </div>
+    -->
+  </div>
+
+  <!-- ── Project 3 ──────────────────────────────────────────── -->
+  <div class="research-item">
+    <p class="meta">Published · Acta Astronautica · 2026</p>
+    <h2>An Orbital House of Cards: Frequent Satellite Close Conjunctions</h2>
+    <p>
+      We introduce the "CRASH Clock," a metric that quantifies stress on the orbital environment by measuring how long, absent satellite maneuvers, until a catastrophic collision might occur. As of June 2025 the clock stood at 5.5 days and continues to fall — down from 164 days in 2018.
+    </p>
+    <p>
+      This decline tracks the rapid growth of satellite megaconstellations, the accumulation of space debris, and periods of degraded situational awareness, such as during solar storms. Published in <a href="https://www.sciencedirect.com/science/article/pii/S0094576526004091?via%3Dihub" target="_blank" rel="noopener">Acta Astronautica</a>; preprint on <a href="https://arxiv.org/abs/2512.09643" target="_blank" rel="noopener">arXiv</a>.
+    </p>
+    <!--
+    <div class="tags">
+      <span class="tag">Satellite Conjunctions</span>
+      <span class="tag">Space Debris</span>
+      <span class="tag">Orbital Congestion</span>
+      <span class="tag">Space Sustainability</span>
+    </div>
+    -->
+  </div>
+
+  <!-- ── Project 4 ──────────────────────────────────────────── -->
   <div class="research-item">
     <p class="meta">Published · Journal of the Astronautical Sciences · 2022</p>
     <h2>Space Weapon Debris + Satellite Constellations</h2>
@@ -47,15 +94,27 @@
     <p>
       The analysis code, <em>JunkySpace</em>, is available on <a href="https://github.com/sarahthiele/junkyspace" target="_blank" rel="noopener">GitHub</a>. The paper was originally presented at the 2021 <a href="https://amostech.com/" target="_blank" rel="noopener">AMOS Conference</a> and subsequently published in the <a href="https://rdcu.be/c2ILA" target="_blank" rel="noopener">Journal of the Astronautical Sciences</a>.
     </p>
+    <!--
     <div class="tags">
       <span class="tag">Space Debris</span>
       <span class="tag">ASAT</span>
       <span class="tag">Orbital Dynamics</span>
       <span class="tag">Space Sustainability</span>
     </div>
+    -->
   </div>
 
-  <!-- ── Project 3 ──────────────────────────────────────────── -->
+  <div class="section-divider">
+    <hr />
+    <span class="divider-tick"></span>
+    <h3>Past Research</h3>
+    <span class="divider-tick"></span>
+    <hr />
+  </div>
+
+  <h3>Gravitational Wave Astrophysics</h3>
+
+  <!-- ── Project 5 ──────────────────────────────────────────── -->
   <div class="research-item">
     <p class="meta">Published · The Astrophysical Journal · 2023</p>
     <h2>Stellar Metallicity and the LISA-Observable Double White Dwarf Population</h2>
@@ -65,34 +124,35 @@
     <p>
       Depending on the binary evolution model, the LISA-observable Galactic DWD population may be reduced by more than half when accounting for this effect — with significant consequences for LISA science forecasts. Published in <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aca7be" target="_blank" rel="noopener">ApJ</a>.
     </p>
+    <!--
     <div class="tags">
       <span class="tag">Gravitational Waves</span>
       <span class="tag">White Dwarfs</span>
       <span class="tag">LISA</span>
       <span class="tag">Binary Stars</span>
     </div>
+    -->
   </div>
 
-  <!-- ── Project 4 ──────────────────────────────────────────── -->
+  <!-- ── Project 6 ──────────────────────────────────────────── -->
   <div class="research-item">
-    <p class="meta">In preparation</p>
-    <h2>Gravitational Wave Detector Characterization</h2>
-    <p>Writeup in preparation.</p>
+    <p class="meta">LIGO Scientific Collaboration · 2022–2025</p>
+    <h2>LIGO Detector Characterization</h2>
+    <p>
+      Before a gravitational-wave signal can be trusted, it has to be distinguished from instrumental noise. I contributed to detector characterization efforts within the LIGO Scientific Collaboration, working on the identification, modeling, and classification of transient noise artifacts ("glitches") that can mimic or mask real astrophysical signals.
+    </p>
+    <ul class="paper-list">
+      <li><strong><a href="https://iopscience.iop.org/article/10.1088/1361-6382/adc4b6/meta" target="_blank" rel="noopener">LIGO Detector Characterization in the First Half of the Fourth Observing Run</a></strong> — Classical and Quantum Gravity, 2025. A collaboration-wide summary of detector performance, noise mitigation, and data-quality tools developed for O4.</li>
+      <li><strong><a href="https://iopscience.iop.org/article/10.1088/1361-6382/ac8094/meta" target="_blank" rel="noopener">Parameterised Population Models of Transient Non-Gaussian Noise in the LIGO Gravitational-Wave Detectors</a></strong> — Classical and Quantum Gravity, 2022. Statistical models of common glitch classes, mapped into the same parameter space as astrophysical signals to help tell the two apart.</li>
+      <li><strong><a href="https://arxiv.org/abs/2307.15867" target="_blank" rel="noopener">A New Method to Distinguish Gravitational-Wave Signals from Detector Noise Transients with Gravity Spy</a></strong> — Physical Review D (submitted 2023). A Gravity Spy–based classifier that correctly flagged 100% of confirmed O3b detections as astrophysical.</li>
+    </ul>
+    <!--
     <div class="tags">
       <span class="tag">Gravitational Waves</span>
       <span class="tag">Detector Characterization</span>
+      <span class="tag">LIGO</span>
     </div>
-  </div>
-
-  <!-- ── Project 5 ──────────────────────────────────────────── -->
-  <div class="research-item">
-    <p class="meta">In preparation</p>
-    <h2>Massive Magnetic White Dwarfs</h2>
-    <p>Writeup in preparation.</p>
-    <div class="tags">
-      <span class="tag">White Dwarfs</span>
-      <span class="tag">Magnetism</span>
-    </div>
+    -->
   </div>
 
 </main>

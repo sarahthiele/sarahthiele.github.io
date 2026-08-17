@@ -12,7 +12,7 @@
   const navHTML = `
 <nav>
   <div class="inner">
-    <a class="brand" href="index.html">Sarah Thiele</a>
+    <a class="brand" href="index.html"><img src="saturn-icon.png" alt="" width="22" height="22" />Sarah Thiele</a>
     <ul>
       ${links.map(l => {
         const active = path.endsWith(l.href.replace('.html','')) ? ' class="active"' : '';
@@ -29,7 +29,7 @@
     <span class="social-links">
       <a href="https://github.com/sarahthiele" target="_blank" rel="noopener">GitHub</a>
       <a href="http://www.linkedin.com/in/sarah-thiele-a543a9128" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://twitter.com/SuborbitalSar" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://orcid.org/0000-0001-7442-6926" target="_blank" rel="noopener">ORCID</a>
     </span>
   </div>
 </footer>`;
