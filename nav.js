@@ -3,8 +3,8 @@
   const path = location.pathname.replace(/\/$/, '') || '/index';
   const links = [
     { href: 'index.html',    label: 'Home'     },
-    { href: 'about.html',    label: 'About'    },
     { href: 'research.html', label: 'Research' },
+    { href: 'about.html',    label: 'About'    },
     { href: 'contact.html',  label: 'Contact'  },
   ];
 
