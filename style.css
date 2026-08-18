@@ -279,6 +279,20 @@ hr {
   line-height: 1.5;
 }
 
+.ql-card.ql-cv {
+  background: var(--slate-bg);
+  border-left: 3px solid var(--blue);
+}
+
+.ql-card.ql-cv .ql-title {
+  color: var(--blue);
+}
+
+.ql-card.ql-cv:hover {
+  border-color: var(--blue-h);
+  background: var(--bg-soft);
+}
+
 /* ─── Research cards ─────────────────────────────────────── */
 .research-item {
   border-top: 1px solid var(--rule);
@@ -319,6 +333,10 @@ hr {
   line-height: 1.55;
 }
 
+.cite-meta {
+  color: var(--muted);
+}
+
 .paper-list strong {
   font-weight: 600;
 }
@@ -350,6 +368,18 @@ hr {
   border-radius: 3px;
 }
 
+.research-figure.inset-left {
+  float: left;
+  width: 270px;
+  margin: 0.2rem 1.5rem 1rem 0;
+}
+
+.research-figure.inset {
+  float: right;
+  width: 440px;
+  margin: 0.2rem 0 1rem 1.5rem;
+}
+
 .tag {
   font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
@@ -360,31 +390,6 @@ hr {
   color: var(--slate);
   border-radius: 3px;
   padding: 0.25rem 0.65rem;
-}
-
-/* ─── CV-style table ─────────────────────────────────────── */
-.cv-section { margin-bottom: 2.5rem; }
-
-.cv-row {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 1rem;
-  padding: 0.7rem 0.5rem;
-  margin: 0 -0.5rem;
-  border-top: 1px solid var(--rule);
-  font-size: 0.97rem;
-  transition: background-color 0.15s;
-}
-
-.cv-row:last-child { border-bottom: 1px solid var(--rule); }
-.cv-row:hover { background: var(--bg-soft); }
-
-.cv-year {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--blue);
-  padding-top: 0.2rem;
 }
 
 /* ─── Contact ────────────────────────────────────────────── */
@@ -437,6 +442,7 @@ footer .social-links a:hover { color: var(--blue); text-decoration: none; }
   .hero-photo { display: none; }
   .quick-links { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
-  .cv-row { grid-template-columns: 1fr; gap: 0.2rem; }
+  .research-figure.inset,
+  .research-figure.inset-left { float: none; width: 100%; margin: 1rem 0; }
   nav ul { gap: 1rem; }
 }

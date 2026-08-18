@@ -5,7 +5,6 @@
     { href: 'index.html',    label: 'Home'     },
     { href: 'about.html',    label: 'About'    },
     { href: 'research.html', label: 'Research' },
-    { href: 'cv.html',       label: 'CV'       },
     { href: 'contact.html',  label: 'Contact'  },
   ];
 
@@ -25,7 +24,7 @@
   const footerHTML = `
 <footer>
   <div class="inner">
-    <span>© 2025 Sarah Thiele</span>
+    <span>© 2026 Sarah Thiele</span>
     <span class="social-links">
       <a href="https://github.com/sarahthiele" target="_blank" rel="noopener">GitHub</a>
       <a href="http://www.linkedin.com/in/sarah-thiele-a543a9128" target="_blank" rel="noopener">LinkedIn</a>
