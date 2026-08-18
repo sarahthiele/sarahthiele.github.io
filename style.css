@@ -108,6 +108,7 @@ nav ul a.active { color: var(--fg); }
 
 /* ─── Layout ─────────────────────────────────────────────── */
 main {
+  position: relative;
   flex: 1 0 auto;
   width: 100%;
   max-width: var(--max);
@@ -435,6 +436,32 @@ footer .inner {
 footer .social-links { display: flex; gap: 1.2rem; }
 footer .social-links a { color: var(--muted); border-bottom: none; transition: color 0.15s; }
 footer .social-links a:hover { color: var(--blue); text-decoration: none; }
+
+/* ─── About page side photos ────────────────────────────── */
+.side-photo {
+  display: none;
+  position: absolute;
+  width: 200px;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  padding: 4px;
+  box-shadow: 0 8px 18px -8px rgba(35, 35, 31, 0.35);
+}
+
+@media (min-width: 1360px) {
+  .side-photo { display: block; }
+}
+
+.side-photo-talk {
+  width: 230px;
+  right: -255px;
+  top: 400px;
+}
+
+.side-photo-hiking {
+  left: -245px;
+  top: 140px;
+}
 
 /* ─── Responsive ─────────────────────────────────────────── */
 @media (max-width: 600px) {
