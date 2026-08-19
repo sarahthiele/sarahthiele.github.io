@@ -438,10 +438,12 @@ footer .social-links a { color: var(--muted); border-bottom: none; transition: c
 footer .social-links a:hover { color: var(--blue); text-decoration: none; }
 
 /* ─── About page side photos ────────────────────────────── */
+/* Below 1360px there's no room in the margins, so these sit inline in the
+   article flow instead of disappearing; above 1360px they float beside it. */
 .side-photo {
-  display: none;
-  position: absolute;
-  width: 200px;
+  display: block;
+  width: min(280px, 100%);
+  margin: 2rem auto;
   border: 1px solid var(--rule);
   background: var(--bg);
   padding: 4px;
@@ -449,18 +451,22 @@ footer .social-links a:hover { color: var(--blue); text-decoration: none; }
 }
 
 @media (min-width: 1360px) {
-  .side-photo { display: block; }
-}
+  .side-photo {
+    position: absolute;
+    margin: 0;
+  }
 
-.side-photo-talk {
-  width: 230px;
-  right: -255px;
-  top: 400px;
-}
+  .side-photo-talk {
+    width: 230px;
+    right: -255px;
+    top: 400px;
+  }
 
-.side-photo-hiking {
-  left: -245px;
-  top: 140px;
+  .side-photo-hiking {
+    width: 200px;
+    left: -245px;
+    top: 140px;
+  }
 }
 
 /* ─── Responsive ─────────────────────────────────────────── */
